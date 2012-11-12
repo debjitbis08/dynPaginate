@@ -1,8 +1,14 @@
 dynPaginate
 ===========
 
-jQuery Pagination plugin
+jQuery Pagination plugin.
 
+##What is "dyn"?
+
+"dyn" is dynamic, which means that the page number display changes based on the current page number selected.This helps
+to show a lot of page numbers.
+
+##Options
 The options for this plugin are as follows:
 
 - count: The total number of pages
