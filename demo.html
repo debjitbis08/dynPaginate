@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <title>Dynamic Pagination Plugin</title>
+  
+  <style>
+    .pagination ol {
+      list-style: none;
+    }
+    .pagination li {
+      border: 1px solid #AAA;
+      float: left;
+      padding: 3px;
+      margin: 0 2px;
+    }
+    .pagination li.ellipsis {
+      border: none;
+    }
+    .pagination li.active {
+      background: #CCC;
+    }
+    .pagination .prev, .pagination .next {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="wrapper">
+    <!-- Include this div where you want the pagination control to appear -->
+    <div class="pagination"></div>
+  </div>
+  <script type="text/javascript" charset="utf-8" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script type="text/javascript" charset="utf-8" src="dyn-paginate-oo.js"></script>
+  <script type="text/javascript" charset="utf-8">
+    /* Please Note:
+     * The maximum number of elements shown will be:
+     * (2*adj + 1) + (2*edgeCount) + (2 ellipses)
+     * so calculate width of container element accordingly.
+    */
+    var div = $('.pagination').dynPaginate({
+      /* pass the total number of pages. You may need to calculate this */
+      count: 5,
+      /* how many adjacent numbers to show around the current page number */
+      adj: 3,
+      /* how many numbers to show at start and end */
+      edgeCount: 2,
+      onChange: function (page) {
+        /* write your code here to do the sliding of pages */
+        console.log(page);
+      }
+    });
+  </script>
+</body>
+</html>
